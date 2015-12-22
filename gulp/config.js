@@ -54,10 +54,16 @@ module.exports = {
   },
 
 
+  // ==============================
+  // images.js settings
+  // ==============================
 
   images: {
     src: src + "/images/**",
-    dest: dest + "/images"
+    dest: dest + "/images",
+    settings: {
+      
+    }
   },
 
 
