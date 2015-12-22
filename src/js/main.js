@@ -9,5 +9,6 @@ import plugin from 'plugin';
 
 $(() => {
   // Shimmed plugin example
+  console.log('test');
   plugin();
 });

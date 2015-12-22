@@ -1,9 +1,4 @@
-
-**N.B.** We are working on a in-depth Gulp Plate Documentation. You can look at the [preview](http://arillo.github.io/gulp-plate-docs/) or follow the basic introcution here below. Watch this repository to get notified when the docs will be ready. Enjoy your meal!
-
-**This is the ES2015 version of gulp-plate**
-
-![Gulp Plate](http://turbo.aminalhazwani.com.s3.amazonaws.com/github/gulp-plate.png)
+# Gulp boilerplate
 
 [Gulp](http://gulpjs.com/) boilerplate & build system.
 
