@@ -77,6 +77,7 @@ Every time you run one of the commands the generated theme will be deleted! Don'
 ## Configuration
 
 All paths and plugin settings have been abstracted into a centralized config object in `gulp/config.js`. Adapt the paths and settings to the structure and needs of your project.
+Please find detailed information regarding configs and task in the revelend readme.
 
 ## Folder structure
 

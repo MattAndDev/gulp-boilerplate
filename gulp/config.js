@@ -4,7 +4,13 @@ var dest = "./dist";
 var src = './src';
 
 module.exports = {
+
+
   destFolder: dest,
+
+  // ==============================
+  // browserSync.js settings
+  // ==============================
 
   browserSync: {
     port: 9000,
@@ -16,9 +22,17 @@ module.exports = {
     open: false
   },
 
+
+  // ==============================
+  // sass.js settings
+  // ==============================
+
   sass: {
     src: src + "/sass/**/*.{sass,scss}",
     dest: dest + '/css',
+
+    // gulp-autoprefixer settings
+
     prefix: [
       'ie >= 9',
       'ie_mob >= 10',
@@ -30,16 +44,22 @@ module.exports = {
       'android >= 4.4',
       'bb >= 10'
     ],
+
+    // gulp-sass-settings
+
     settings: {
       indentedSyntax: true, // Enable .sass syntax!
       imagePath: 'images' // Used by the image-url helper
     }
   },
 
+
+
   images: {
     src: src + "/images/**",
     dest: dest + "/images"
   },
+
 
   markup: {
     partialsGlob: "**/*.html",
@@ -48,14 +68,18 @@ module.exports = {
     dest: dest + "/"
   },
 
+
+
   jslint: {
     srcJs: src + '/js/**/*.js'
   },
+
 
   fonts: {
     src: src + '/fonts/**',
     dest: dest + '/fonts'
   },
+
 
   production: {
     cssSrc: dest + '/css/*.css',
