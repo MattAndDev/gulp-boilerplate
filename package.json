@@ -6,6 +6,9 @@
     "type": "git",
     "url": "https://github.com/MattAndDev/gulp-boilerplate.git"
   },
+  "engines": {
+      "node": "^5.0.0"
+  },
   "browser": {
     "plugin": "./src/js/vendor/jquery-plugin.js"
   },
