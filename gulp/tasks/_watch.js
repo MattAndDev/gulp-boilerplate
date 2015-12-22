@@ -31,6 +31,10 @@ gulp.task('watch', ['clean'], function() {
     runSequence('images', browserSync.reload);
   });
 
+  watch(config.fonts.src, function(){
+    runSequence('fonts', browserSync.reload);
+  });
+
   watch([config.markup.src, config.markup.partialsSrc + config.markup.partialsGlob], function(){
     runSequence('markup', browserSync.reload);
   });

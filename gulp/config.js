@@ -52,6 +52,11 @@ module.exports = {
     srcJs: src + '/js/**/*.js'
   },
 
+  fonts: {
+    src: src + '/fonts/**',
+    dest: dest + '/fonts'
+  },
+
   production: {
     cssSrc: dest + '/css/*.css',
     jsSrc: dest + '/js/*.js',

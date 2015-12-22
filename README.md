@@ -55,13 +55,7 @@ $ npm install
 This runs through all dependencies listed in `package.json` and downloads them to a `node_modules` folder in your project directory.
 
 
-## `gulp` commands
-
-```
-$ gulp
-```
-
-Will generate a dev version of the theme in the `dist` folder
+## Workflow tasks
 
 
 ```
@@ -88,13 +82,14 @@ All paths and plugin settings have been abstracted into a centralized config obj
 
 ```bash
 myTheme_source/
-  gulp/         # all gulp tasks
-  src/          # all source files
-    icons/      # svg to be combined as a sprite
-    images/     # other images
-    js/         # js code, can be coffeescript or plain js (mix is possible)
-    sass/       # Sass code, scss and sass syntax possible
-    templates/  # Silverstripe templates
+  gulp/             # all gulp tasks
+  src/              # all source files
+    icons/          # svg to be combined as a sprite
+    images/         # other images
+    js/             # js code, es2015 via babeljs
+    sass/           # Sass code, scss and sass syntax possible
+    html/templates  # Static templates marked as tpl.html
+    html/includes   # Html partials to be included in the templates
 ```
 
 Any additional folder to be moved to the production theme needs a new dedicated task e.g. `"moveFonts"` if you would need to move a `fonts/` folder.
