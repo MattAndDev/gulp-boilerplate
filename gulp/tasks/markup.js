@@ -10,9 +10,7 @@ var handleErrors = require('../util/handleErrors');
 
 gulp.task('markup', function() {
   return gulp.src(config.src)
-    .pipe(include({
-      basepath: config.partialsSrc
-    }))
+    .pipe(include(config.settings))
     .on('error', handleErrors)
     .pipe(rename({extname: ""}))
     .pipe(rename({extname: ".html"}))

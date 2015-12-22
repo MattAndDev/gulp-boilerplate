@@ -8,6 +8,37 @@ module.exports = {
 
   destFolder: dest,
 
+
+
+  // ==============================
+  // browserify.js settings
+  // ==============================
+
+
+  browserify: {
+    // A separate bundle will be generated for each
+    // bundle config in the list below
+    bundleConfigs: [{
+      entries: src + '/js/main.js',
+      dest: dest + '/js',
+      outputName: 'main.js',
+      // Additional file extentions to make optional
+      extensions: ['.js'],
+      // list of modules to make require-able externally
+      require: ['jquery']
+      // old: require: ['jquery', 'backbone/node_modules/underscore']
+      // See https://github.com/greypants/gulp-starter/issues/87 for note about
+      // why this is 'backbone/node_modules/underscore' and not 'underscore'
+    // }, {
+    //   entries: src + '/javascript/page.js',
+    //   dest: dest + '/js',
+    //   outputName: 'page.js',
+    //   // list of externally available modules to exclude from the bundle
+    //   external: ['jquery', 'underscore']
+    }]
+  },
+
+
   // ==============================
   // browserSync.js settings
   // ==============================
@@ -20,6 +51,69 @@ module.exports = {
     },
     notify: false,
     open: false
+  },
+
+
+  fonts: {
+    src: src + '/fonts/**',
+    dest: dest + '/fonts'
+  },
+
+
+
+  // ==============================
+  // images.js settings
+  // ==============================
+
+  images: {
+    src: src + "/images/**",
+    dest: dest + "/images",
+
+    // gulp-imagemin settings
+
+    settings: {
+    }
+  },
+
+
+  // ==============================
+  // jslint.js settings
+  // ==============================
+
+  jslint: {
+    srcJs: src + '/js/**/*.js'
+  },
+
+
+
+  // ==============================
+  // markup.js settings
+  // ==============================
+
+  markup: {
+    src: src + "/html/templates/*.tpl.html",
+    dest: dest + "/",
+
+    // gulp-file-include settings
+
+    settings: {
+      basepath: src + '/html/includes/',
+      prefix : '@@'
+    }
+  },
+
+
+  // ==============================
+  // _production.js settings
+  // ==============================
+
+
+  production: {
+    cssSrc: dest + '/css/*.css',
+    jsSrc: dest + '/js/*.js',
+    dest: dest,
+    cssDest: dest + '/css',
+    jsDest: dest + '/js'
   },
 
 
@@ -45,7 +139,7 @@ module.exports = {
       'bb >= 10'
     ],
 
-    // gulp-sass-settings
+    // gulp-sass settings
 
     settings: {
       indentedSyntax: true, // Enable .sass syntax!
@@ -53,47 +147,10 @@ module.exports = {
     }
   },
 
-
   // ==============================
-  // images.js settings
+  // sprite.js settings
   // ==============================
 
-  images: {
-    src: src + "/images/**",
-    dest: dest + "/images",
-    settings: {
-      
-    }
-  },
-
-
-  markup: {
-    partialsGlob: "**/*.html",
-    partialsSrc: src + '/html/includes/',
-    src: src + "/html/templates/*.tpl.html",
-    dest: dest + "/"
-  },
-
-
-
-  jslint: {
-    srcJs: src + '/js/**/*.js'
-  },
-
-
-  fonts: {
-    src: src + '/fonts/**',
-    dest: dest + '/fonts'
-  },
-
-
-  production: {
-    cssSrc: dest + '/css/*.css',
-    jsSrc: dest + '/js/*.js',
-    dest: dest,
-    cssDest: dest + '/css',
-    jsDest: dest + '/js'
-  },
 
   svgSprite: {
     type: 'inline', // 'inline'
@@ -133,28 +190,7 @@ module.exports = {
         cssPath: '../images/'
       }
     }
-  },
-
-  browserify: {
-    // A separate bundle will be generated for each
-    // bundle config in the list below
-    bundleConfigs: [{
-      entries: src + '/js/main.js',
-      dest: dest + '/js',
-      outputName: 'main.js',
-      // Additional file extentions to make optional
-      extensions: ['.js'],
-      // list of modules to make require-able externally
-      require: ['jquery']
-      // old: require: ['jquery', 'backbone/node_modules/underscore']
-      // See https://github.com/greypants/gulp-starter/issues/87 for note about
-      // why this is 'backbone/node_modules/underscore' and not 'underscore'
-    // }, {
-    //   entries: src + '/javascript/page.js',
-    //   dest: dest + '/js',
-    //   outputName: 'page.js',
-    //   // list of externally available modules to exclude from the bundle
-    //   external: ['jquery', 'underscore']
-    }]
   }
+
+
 };
