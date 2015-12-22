@@ -18,13 +18,23 @@ Includes the following tools, tasks, and workflows:
 
 ## Dependencies / Installation
 
-Install Node. If you use homebrew, do:
+### NVM + Node
+
+Install [node version manager (nvm)](https://github.com/creationix/nvm) via cURL.
 
 ```bash
-$ brew install node
+$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
 ```
 
-Otherwise, you can download and install from [here](http://nodejs.org/download/).
+Look into the ```packge.json``` and install the required node version, you can find it under engines.
+
+```json
+engines: {
+    "node": "version" 
+  }
+```
+
+### Gulp
 
 Install Gulp globally:
 
@@ -32,7 +42,10 @@ Install Gulp globally:
 $ npm install -g gulp
 ```
 
-After the setup:
+
+### Setup
+
+Once previous dependencies are met you can just ```cd gulp-boilerplate``` and run 
 
 ```
 $ cd to project
@@ -40,6 +53,7 @@ $ npm install
 ```
 
 This runs through all dependencies listed in `package.json` and downloads them to a `node_modules` folder in your project directory.
+
 
 ## `gulp` commands
 
