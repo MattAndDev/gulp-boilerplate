@@ -43,8 +43,8 @@ module.exports = {
 
   markup: {
     partialsGlob: "**/*.html",
-    partialsSrc: src + '/html/**/**/*.html',
-    src: src + "/html/*.tpl.html",
+    partialsSrc: src + '/html/includes/',
+    src: src + "/html/templates/*.tpl.html",
     dest: dest + "/"
   },
 
