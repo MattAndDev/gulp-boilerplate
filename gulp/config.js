@@ -50,7 +50,12 @@ module.exports = {
       baseDir: dest
     },
     notify: false,
-    open: false
+    open: false,
+    files: [
+      dest + '/css/*',
+      dest + '/js/*',
+      dest + '*.html'
+    ]
   },
 
 
