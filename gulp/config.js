@@ -164,6 +164,11 @@ module.exports = {
     dest: dest + '/images',
     removeFills: true,
     optionsInline: {
+      shape: {
+        id: {
+          generator: 'i-%s'
+        }
+      },
       mode: {
         symbol: {
           sprite: 'sprite.svg',
