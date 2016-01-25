@@ -25,10 +25,11 @@ $i-map: (
 
 {{/shapes}}
 
-.svgSprite
+.svgSprite {
   position: absolute;
   top: 0;
   left: 0;
   overflow: hidden;
   width: 0;
   height: 0;
+}
