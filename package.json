@@ -66,7 +66,6 @@
   },
   "dependencies": {
     "jquery": "~2.1.0",
-    "jquery": "~2.1.0",
     "svg4everybody": "^2.0.0"
   }
 }
