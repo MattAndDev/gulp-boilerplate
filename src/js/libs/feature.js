@@ -14,15 +14,15 @@
  *
  * USAGE EXAMPLE:
  * if (feature.webGL) {
- *   console.log("webGL supported!");
+ *   console.log('webGL supported!');
  * }
  *
  * Author: @viljamis, https://viljamis.com
  */
 
 /* globals DocumentTouch */
-;(function (window, document, undefined) {
-  "use strict";
+window.featurejs = function() {
+  'use strict';
 
   // For minification only
   var docEl = document.documentElement;
@@ -50,13 +50,13 @@
      * returns it's prefixed version valid for current browser it runs in
      */
     pfx : (function() {
-      var style = document.createElement("dummy").style;
-      var prefixes = ["Webkit", "Moz", "O", "ms"];
+      var style = document.createElement('dummy').style;
+      var prefixes = ['Webkit', 'Moz', 'O', 'ms'];
       var memory = {};
       return function(prop) {
-        if (typeof memory[prop] === "undefined") {
+        if (typeof memory[prop] === 'undefined') {
           var ucProp = prop.charAt(0).toUpperCase() + prop.substr(1),
-            props = (prop + " " + prefixes.join(ucProp + " ") + ucProp).split(" ");
+            props = (prop + ' ' + prefixes.join(ucProp + ' ') + ucProp).split(' ');
             memory[prop] = null;
           for (var i in props) {
             if (style[props[i]] !== undefined) {
@@ -84,19 +84,19 @@
 
     // Test if CSS 3D transforms are supported
     css3Dtransform : (function() {
-      var test = (!util.old && util.pfx("perspective") !== null);
+      var test = (!util.old && util.pfx('perspective') !== null);
       return !!test;
     })(),
 
     // Test if CSS transforms are supported
     cssTransform : (function() {
-      var test = (!util.old && util.pfx("transformOrigin") !== null);
+      var test = (!util.old && util.pfx('transformOrigin') !== null);
       return !!test;
     })(),
 
     // Test if CSS transitions are supported
     cssTransition : (function() {
-      var test = util.pfx("transition") !== null;
+      var test = util.pfx('transition') !== null;
       return !!test;
     })(),
 
@@ -110,23 +110,23 @@
     matchMedia : !!window.matchMedia,
 
     // Test if Device Motion is supported
-    deviceMotion : ("DeviceMotionEvent" in window),
+    deviceMotion : ('DeviceMotionEvent' in window),
 
     // Test if Device Orientation is supported
-    deviceOrientation : ("DeviceOrientationEvent" in window),
+    deviceOrientation : ('DeviceOrientationEvent' in window),
 
     // Test if Context Menu is supported
-    contextMenu : ("contextMenu" in docEl && "HTMLMenuItemElement" in window),
+    contextMenu : ('contextMenu' in docEl && 'HTMLMenuItemElement' in window),
 
     // Test if classList API is supported
-    classList : ("classList" in docEl),
+    classList : ('classList' in docEl),
 
     // Test if placeholder attribute is supported
-    placeholder : ("placeholder" in util.create("input")),
+    placeholder : ('placeholder' in util.create('input')),
 
     // Test if localStorage is supported
     localStorage : (function() {
-      var test = "x";
+      var test = 'x';
       try {
         localStorage.setItem(test, test);
         localStorage.removeItem(test);
@@ -137,80 +137,80 @@
     })(),
 
     // Test if History API is supported
-    historyAPI : (window.history && "pushState" in window.history),
+    historyAPI : (window.history && 'pushState' in window.history),
 
     // Test if ServiceWorkers are supported
-    serviceWorker : ("serviceWorker" in navigator),
+    serviceWorker : ('serviceWorker' in navigator),
 
     // Test if viewport units are supported
     viewportUnit : (function(el) {
       try {
-        el.style.width = "1vw";
-        var test = el.style.width !== "";
+        el.style.width = '1vw';
+        var test = el.style.width !== '';
         return !!test;
       } catch(err) {
         return false;
       }
-    })(util.create("dummy")),
+    })(util.create('dummy')),
 
     // Test if REM units are supported
     remUnit : (function(el) {
       try {
-        el.style.width = "1rem";
-        var test = el.style.width !== "";
+        el.style.width = '1rem';
+        var test = el.style.width !== '';
         return !!test;
       } catch(err) {
         return false;
       }
-    })(util.create("dummy")),
+    })(util.create('dummy')),
 
     // Test if Canvas is supported
     canvas : (function(el) {
-      return !!(el.getContext && el.getContext("2d"));
-    })(util.create("canvas")),
+      return !!(el.getContext && el.getContext('2d'));
+    })(util.create('canvas')),
 
     // Test if SVG is supported
-    svg : !!document.createElementNS && !!document.createElementNS("http://www.w3.org/2000/svg", "svg").createSVGRect,
+    svg : !!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', 'svg').createSVGRect,
 
     // Test if WebGL is supported
     webGL : (function(el) {
       try {
-        return !!(window.WebGLRenderingContext && (el.getContext("webgl") || el.getContext("experimental-webgl")));
+        return !!(window.WebGLRenderingContext && (el.getContext('webgl') || el.getContext('experimental-webgl')));
       } catch(err) {
         return false;
       }
-    })(util.create("canvas")),
+    })(util.create('canvas')),
 
     // Test if cors is supported
-    cors : ("XMLHttpRequest" in window && "withCredentials" in new XMLHttpRequest()),
+    cors : ('XMLHttpRequest' in window && 'withCredentials' in new XMLHttpRequest()),
 
     // Tests if touch events are supported, but doesn't necessarily reflect a touchscreen device
-    touch : !!(("ontouchstart" in window) || window.navigator && window.navigator.msPointerEnabled && window.MSGesture || window.DocumentTouch && document instanceof DocumentTouch),
+    touch : !!(('ontouchstart' in window) || window.navigator && window.navigator.msPointerEnabled && window.MSGesture || window.DocumentTouch && document instanceof DocumentTouch),
 
     // Test if async attribute is supported
-    async : ("async" in util.create("script")),
+    async : ('async' in util.create('script')),
 
     // Test if defer attribute is supported
-    defer : ("defer" in util.create("script")),
+    defer : ('defer' in util.create('script')),
 
     // Test if Geolocation is supported
-    geolocation : ("geolocation" in navigator),
+    geolocation : ('geolocation' in navigator),
 
     // Test if img srcset attribute is supported
-    srcset : ("srcset" in util.create("img")),
+    srcset : ('srcset' in util.create('img')),
 
     // Test if img sizes attribute is supported
-    sizes : ("sizes" in util.create("img")),
+    sizes : ('sizes' in util.create('img')),
 
     // Test if Picture element is supported
-    pictureElement : ("HTMLPictureElement" in window),
+    pictureElement : ('HTMLPictureElement' in window),
 
     // Run all the tests and add supported classes
     testAll : function() {
-      var classes = " js";
+      var classes = ' js';
       for (var test in this) {
-        if (test !== "testAll" && test !== "constructor" && this[test]) {
-          classes += " " + test;
+        if (test !== 'testAll' && test !== 'constructor' && this[test]) {
+          classes += ' ' + test;
         }
       }
       docEl.className += classes.toLowerCase();
@@ -226,5 +226,4 @@
     return ftr;
   }
   window.feature = expose();
-
-}(window, document));
+};
