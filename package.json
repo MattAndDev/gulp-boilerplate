@@ -10,21 +10,18 @@
       "node": "^5.0.0"
   },
   "browser": {
-    "plugin": "./src/js/vendor/jquery-plugin.js"
+    "featurejs": "./src/js/libs/feature.js"
+  },
+  "browserify-shim": {
+    "featurejs": {
+      "exports": "featurejs"
+    }
   },
   "browserify": {
     "transform": [
       "browserify-shim",
       "babelify"
     ]
-  },
-  "browserify-shim": {
-    "plugin": {
-      "exports": "plugin",
-      "depends": [
-        "jquery:$"
-      ]
-    }
   },
   "engine": "^node 5.0.0",
   "devDependencies": {
@@ -67,6 +64,7 @@
     "watchify": "^3.7.0"
   },
   "dependencies": {
+    "jquery": "~2.1.0",
     "jquery": "~2.1.0",
     "svg4everybody": "^2.0.0"
   }
