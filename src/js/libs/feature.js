@@ -21,7 +21,7 @@
  */
 
 /* globals DocumentTouch */
-window.featurejs = function() {
+;(function (window, document, undefined) {
   'use strict';
 
   // For minification only
@@ -226,4 +226,5 @@ window.featurejs = function() {
     return ftr;
   }
   window.feature = expose();
-};
+
+}(window, document));
