@@ -1,5 +1,6 @@
 import $ from 'jquery';
 
+import MyClass from './classes/MyClass';
 // Shimmed feature js , aiting for npm module
 import featurejs from 'featurejs';
 
@@ -15,10 +16,13 @@ $(() => {
   // =======================================================
 
   if (feature.touch) {
+    let inst = new MyClass();
     $('html').addClass('touch');
   } else {
     $('html').addClass('no-touch');
   }
+
+  let inst = new MyClass()
   // =======================================================
 
   // Code some awesome things
