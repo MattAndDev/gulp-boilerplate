@@ -1,7 +1,8 @@
 import $ from 'jquery';
 
-import MyClass from './classes/MyClass';
-// Shimmed feature js , aiting for npm module
+import Animator from './classes/Animator';
+import Settings from './classes/Settings';
+
 import featurejs from 'featurejs';
 
 // Enable inline svgs in IE
@@ -10,21 +11,13 @@ import featurejs from 'featurejs';
 
 $(() => {
 
-  // =======================================================
-  // Frontend helpers
-  // Init featurejs and set default touch/no-touc flag
-  // =======================================================
+  // Add the Settings class
+  let settings = new Settings()
 
-  if (feature.touch) {
-    let inst = new MyClass();
-    $('html').addClass('touch');
-  } else {
-    $('html').addClass('no-touch');
-  }
+  // Add the Animator class
+  let animator = new Animator()
 
-  let inst = new MyClass()
   // =======================================================
-
   // Code some awesome things
 
 });
