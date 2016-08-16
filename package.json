@@ -65,6 +65,7 @@
     "watchify": "^3.7.0"
   },
   "dependencies": {
+    "event-emitter": "^0.3.4",
     "jquery": "~2.1.0",
     "raf": "^3.2.0",
     "svg4everybody": "^2.0.0"
