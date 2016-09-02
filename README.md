@@ -16,9 +16,6 @@ Includes the following tools, tasks, and workflows:
 - Svg icon sprite generation using [gulp-svg-sprite](https://github.com/jkphl/gulp-svg-sprite)
 
 
-## Docs
-Pelase find the docs in the ```.wiki/``` folder.
-
 ## References / Credits
 
 - Gulp-plate based on https://github.com/greypants/gulp-starter and https://github.com/arillo/gulp-plate
