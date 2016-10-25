@@ -17,7 +17,14 @@ module.exports = {
 
   browserify: {
     src: src + '/js/*.js',
-    dest: dest + '/js/'
+    dest: dest + '/js/',
+    config: {
+
+    },
+    babel: {
+      presets: ['es2015'],
+      plugins: ['transform-class-properties']
+    }
   },
 
 

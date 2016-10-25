@@ -1,12 +1,3 @@
-/* browserify task
-   ---------------
-   Bundle javascripty things with browserify!
-
-   This task is set up to generate multiple separate bundles, from
-   different sources, and to use Watchify when run from the default task.
-
-   See browserify.bundleConfigs in gulp/config.js
-*/
 import gulp from 'gulp'
 import browserify from 'browserify'
 import gutil from 'gulp-util'
@@ -17,8 +8,8 @@ import uglify from 'gulp-uglify'
 import config from '../config'
 import babel from 'babelify'
 
-function browserifyTask (devMode) {
-  // console.log(config.browserify.src);
+function browserifyTask () {
+
   return gulp.src(config.browserify.src, {read: false}) // no need of reading file because browserify does.
 
       // transform file objects using gulp-tap plugin
@@ -29,12 +20,7 @@ function browserifyTask (devMode) {
         // replace file contents with browserify's bundle stream
         file.contents =
           browserify(file.path, config.browserify.config)
-          .transform(babel, {
-            presets:
-              ['es2015', 'react'],
-            plugins:
-              ['transform-class-properties']
-          })
+          .transform(babel, config.browserify.babel)
           .bundle()
 
       }))
@@ -45,18 +31,13 @@ function browserifyTask (devMode) {
       // load and init sourcemaps
       .pipe(sourcemaps.init({loadMaps: true}))
 
-      .pipe(uglify())
-
       // write sourcemaps
-      .pipe(sourcemaps.write('./'))
+      .pipe(sourcemaps.write())
 
-      .pipe(gulp.dest(config.browserify.dest));
+      .pipe(gulp.dest(config.browserify.dest))
 
 }
 
-// gulp.task('browserify', function() {
-//   return browserifyTask()
-// })
 
-// Exporting the task so we can call it directly in our watch task, with the 'devMode' option
+// Exporting the task
 module.exports = browserifyTask
