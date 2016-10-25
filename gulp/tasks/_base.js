@@ -1,8 +1,10 @@
 import gulp from 'gulp'
-import clean from './clean.js'
+import clean from './clean'
+import browserify from './browserify'
 
 
 
 gulp.task('base', gulp.series(
-  clean
+  clean,
+  gulp.parallel(browserify)
 ))
