@@ -12,7 +12,7 @@
     "strict": 0,
     "brace-style": [2, "stroustrup", { "allowSingleLine": true }],
     "no-multiple-empty-lines": [2 ,   { "max": 4,   "maxEOF": 1, "maxBOF": 3 } ],
-    "padded-blocks": [0,"never"]
+    "padded-blocks": [0,"never"],
     "eol-last": [0],
     "no-mixed-requires": [0],
     "no-underscore-dangle": [0]
