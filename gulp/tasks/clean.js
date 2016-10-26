@@ -1,10 +1,19 @@
 import config from '../config'
 import del from 'del'
 
+// ============================================
+// Clean task
+// ============================================
+//  clears dist folder
+// ============================================
+
 function clean (done) {
   return del(config.dest, { dot: true, force: true }, done)
 }
-clean.displayName = 'clean'
-clean.description = 'Removes destination folder to build anew'
 
+// Description
+clean.displayName = 'clean'
+clean.description = 'Removes destination folder'
+
+// Export
 export default clean
