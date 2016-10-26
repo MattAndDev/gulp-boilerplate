@@ -9,7 +9,6 @@
 // =======================================================================
 
 import featurejs from 'featurejs';
-import $ from 'jquery'
 import ee from 'event-emitter'
 
 
@@ -59,7 +58,6 @@ class Settings {
 
     // Mapping events
     if (feature.touch) {
-      $('html').addClass('touch');
       this.events = {
         click : 'touchend',
         mouseenter : 'touchstart',
@@ -70,7 +68,6 @@ class Settings {
         hover : 'touchstart',
       }
     } else {
-      $('html').addClass('no-touch');
       this.events = {
         click : 'click',
         mouseenter : 'mouseenter',

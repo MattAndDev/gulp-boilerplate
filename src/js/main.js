@@ -1,15 +1,13 @@
-import $ from 'jquery';
+import Animator from './classes/Animator'
+import Settings from './classes/Settings'
+import featurejs from 'featurejs'
 
-import Animator from './classes/Animator';
-import Settings from './classes/Settings';
+var domReady = function (callback) {
+  document.readyState === 'interactive' || document.readyState === 'complete' ? callback() : document.addEventListener('DOMContentLoaded', callback)
+}
 
-import featurejs from 'featurejs';
 
-// Enable inline svgs in IE
-// import svg4everybody from 'svg4everybody';
-// svg4everybody();
-
-$(() => {
+domReady(() => {
 
   // Add the Settings class
   let settings = new Settings()
@@ -20,4 +18,4 @@ $(() => {
   // =======================================================
   // Code some awesome things
 
-});
+})

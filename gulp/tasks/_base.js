@@ -1,10 +1,11 @@
 import gulp from 'gulp'
 import clean from './clean'
-import browserify from './browserify'
+import bundler from './bundler'
+import server from './server'
 
 
 
 gulp.task('base', gulp.series(
-  clean,
-  gulp.parallel(browserify)
+  gulp.parallel(clean, server),
+  gulp.parallel(bundler)
 ))
