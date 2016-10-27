@@ -1,17 +1,21 @@
-'use strict';
+import notify from 'gulp-notify'
 
-var notify = require('gulp-notify');
+// ============================================
+//  Handle error
+// ============================================
+// prevent stream to break  and prints error
+// ============================================
 
-module.exports = function() {
+function handleError () {
 
-  var args = Array.prototype.slice.call(arguments);
+  var args = Array.prototype.slice.call(arguments)
 
   // Send error to notification center with gulp-notify
   notify.onError({
     title: 'Compile Error',
     message: '<%= error %>'
-  }).apply(this, args);
+  }).apply(this, args)
 
   // Keep gulp from hanging on this task
-  this.emit('end');
-};
+  this.emit('end')
+}

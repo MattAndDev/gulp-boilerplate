@@ -33,7 +33,6 @@ function bundler () {
 
       }))
 
-
       // transform streaming contents into buffer contents (because gulp-sourcemaps does not support streaming contents)
       .pipe(buffer())
 
