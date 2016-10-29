@@ -63,7 +63,7 @@ module.exports = {
 
     // gulp-imagemin settings
 
-    settings: {
+    options: {
     }
   },
 
