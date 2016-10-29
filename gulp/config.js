@@ -1,7 +1,5 @@
-'use strict';
-
-var dest = "./dist";
-var src = './src';
+var dest = './dist'
+var src = './src'
 
 module.exports = {
 
@@ -60,8 +58,8 @@ module.exports = {
   // ==============================
 
   images: {
-    src: src + "/images/**",
-    dest: dest + "/images",
+    src: src + '/images/**',
+    dest: dest + '/images',
 
     // gulp-imagemin settings
 
@@ -85,14 +83,14 @@ module.exports = {
   // ==============================
 
   markup: {
-    src: src + "/html/templates/*.tpl.html",
-    dest: dest + "/",
+    src: src + '/html/templates/*.tpl.html',
+    dest: dest + '/',
 
     // gulp-file-include settings
 
     settings: {
       basepath: src + '/html/includes/',
-      prefix : '@@'
+      prefix: '@@'
     }
   },
 
@@ -116,7 +114,7 @@ module.exports = {
   // ==============================
 
   sass: {
-    src: src + "/sass/**/*.{sass,scss}",
+    src: src + '/sass/**/*.{sass,scss}',
     dest: dest + '/css',
 
     // gulp-autoprefixer settings
@@ -192,4 +190,4 @@ module.exports = {
   }
 
 
-};
+}
