@@ -6,7 +6,7 @@ import notify from 'gulp-notify'
 // prevent stream to break  and prints error
 // ============================================
 
-function handleError () {
+export default function () {
 
   var args = Array.prototype.slice.call(arguments)
 
