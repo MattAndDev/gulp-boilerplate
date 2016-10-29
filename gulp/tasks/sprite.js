@@ -14,7 +14,7 @@ import handleErrors from '../util/handleErrors'
 // ============================================
 
 function sprite () {
-  gulp.src(config.svgSprite.src)
+  return gulp.src(config.svgSprite.src)
     .pipe(changed(config.svgSprite.dest))
     .pipe(svgmin(config.svgSprite.svgmin))
     .pipe(plumber())

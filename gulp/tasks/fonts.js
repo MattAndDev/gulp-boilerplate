@@ -10,7 +10,7 @@ import handleErrors from '../util/handleErrors'
 // ============================================
 
 function fonts () {
-  gulp.src(config.fonts.src)
+  return gulp.src(config.fonts.src)
     .pipe(gulp.dest(config.fonts.dest))
     .pipe(browserSync.reload({stream: true}))
 }

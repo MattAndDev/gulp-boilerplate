@@ -16,7 +16,7 @@ import autoprefixer from 'gulp-autoprefixer'
 
 
 function sass () {
-  gulp.src(config.sass.src)
+  return gulp.src(config.sass.src)
     .pipe(sourcemaps.init())
     .pipe(gulpSass(config.sass.settings))
     .on('error', handleErrors)
