@@ -5,10 +5,11 @@ import server from './server'
 import fonts from './fonts'
 import images from './images'
 import markup from './markup'
+import sass from './sass'
 
 
 
 gulp.task('base', gulp.series(
   gulp.parallel(clean),
-  gulp.parallel(bundler, fonts, server, images, markup)
+  gulp.parallel(bundler, fonts, server, images, markup, sass)
 ))
