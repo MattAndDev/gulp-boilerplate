@@ -7,6 +7,12 @@ import svgmin from 'gulp-svgmin'
 import config from '../config'
 import handleErrors from '../util/handleErrors'
 
+// ============================================
+// Sprite task
+// ============================================
+//  Creates svg sprite and scss stylesheet
+// ============================================
+
 function sprite () {
   gulp.src(config.svgSprite.src)
     .pipe(changed(config.svgSprite.dest))
@@ -17,6 +23,6 @@ function sprite () {
 }
 
 sprite.displayName = 'sprite'
-sprite.description = 'Build the svgSprite from svg sources to the theme directory'
+sprite.description = 'Creates svg sprites and relevant scss partial'
 
 export default sprite
