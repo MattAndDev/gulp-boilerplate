@@ -145,12 +145,9 @@ module.exports = {
 
 
   svgSprite: {
-    type: 'inline', // 'inline'
-    src: src + '/icons',
-    glob: '**/*.svg',
+    src: src + '/icons/*.svg',
     dest: dest + '/images',
-    removeFills: true,
-    optionsInline: {
+    config: {
       shape: {
         id: {
           generator: 'i-%s'
@@ -169,23 +166,13 @@ module.exports = {
         }
       }
     },
-    optionsBackground: {
-      mode: {
-        css: {
-          layout: 'horizontal',
-          sprite: 'sprite.svg',
-          dest: '.',
-          render: {
-            scss: {
-              template: 'gulp/tpl/_sprite-background.scss',
-              dest: '../../src/sass/_sprite.scss'
-            }
-          }
-        }
-      },
-      variables: {
-        cssPath: '../images/'
-      }
+    svgMin: {
+      plugins: [
+        { removeTitle: true },
+        { removeDesc: true },
+        { removeStyle: true },
+        { removeAttrs: { attrs: '(fill|stroke|style)' } }
+      ]
     }
   }
 
