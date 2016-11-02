@@ -3,10 +3,10 @@ import clean from './clean'
 import bundler from './bundler'
 import fonts from './fonts'
 import images from './images'
-import markup from './markup'
 import sass from './sass'
 import sprite from './sprite'
 import server from './server'
+import twig from './twig'
 import config from '../config'
 
 
@@ -27,7 +27,7 @@ gulp.task('watch',
 
   // JavaScript watcher
   gulp.watch(
-    config.jslint.srcJs,
+    config.browserify.src,
     gulp.parallel(bundler)
   ),
 
@@ -49,9 +49,9 @@ gulp.task('watch',
     gulp.parallel(fonts)
   ),
 
-  // Markup watcher
+  // Twig watcher
   gulp.watch(
-    [config.markup.src, config.markup.settings.basepath + config.markup.partialsGlob],
-    gulp.parallel(markup)
+    [config.twig.src, config.twig.partialsGlob],
+    gulp.parallel(twig)
   )
 )

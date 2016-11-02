@@ -67,31 +67,14 @@ module.exports = {
     }
   },
 
-
-  // ==============================
-  // jslint.js settings
-  // ==============================
-
-  jslint: {
-    srcJs: src + '/js/**/*.js'
-  },
-
-
-
   // ==============================
   // markup.js settings
   // ==============================
 
-  markup: {
-    src: src + '/html/templates/*.twig',
+  twig: {
+    src: src + '/twig/templates/*.twig',
     dest: dest + '/',
-
-    // gulp-file-include settings
-
-    settings: {
-      basepath: src + '/html/includes/',
-      prefix: '@@'
-    }
+    partialsGlob: src + '/twig/**/*.twig'
   },
 
 

@@ -1,7 +1,7 @@
 import gulp from 'gulp'
 import config from '../config'
 import browserSync from 'browser-sync'
-import twig from 'gulp-twig'
+import twigCompiler from 'gulp-twig'
 import handleErrors from '../util/handleErrors'
 import minifyHTML from 'gulp-minify-html'
 
@@ -12,17 +12,17 @@ import minifyHTML from 'gulp-minify-html'
 // ============================================
 
 
-function markup () {
-  return gulp.src(config.markup.src)
-    .pipe(twig())
+function twig () {
+  return gulp.src(config.twig.src)
+    .pipe(twigCompiler())
     .pipe(minifyHTML({spare: true}))
-    .pipe(gulp.dest(config.markup.dest))
+    .pipe(gulp.dest(config.twig.dest))
     .pipe(browserSync.reload({stream: true}))
 }
 
 // Description
-markup.displayName = 'makrup'
-markup.description = 'Compiles and minifies html templates'
+twig.displayName = 'twig'
+twig.description = 'Compiles and minifies twig templates'
 
 // Export
-export default markup
+export default twig
