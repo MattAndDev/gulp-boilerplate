@@ -12,8 +12,8 @@ import browserSync from 'browser-sync'
 
 function images () {
   return gulp.src(config.images.src)
-    .pipe(changed(config.images.dest)) // Ignore unchanged files
-    .pipe(imagemin(config.images.options)) // Optimize
+    .pipe(changed(config.images.dest))
+    .pipe(imagemin(config.images.options))
     .pipe(gulp.dest(config.images.dest))
     .pipe(browserSync.reload({stream: true}))
 }

@@ -83,7 +83,7 @@ module.exports = {
   // ==============================
 
   markup: {
-    src: src + '/html/templates/*.tpl.html',
+    src: src + '/html/templates/*.twig',
     dest: dest + '/',
 
     // gulp-file-include settings
