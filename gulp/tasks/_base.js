@@ -6,10 +6,11 @@ import images from './images'
 import markup from './markup'
 import sass from './sass'
 import sprite from './sprite'
+import server from './server'
 
 
 
 gulp.task('base', gulp.series(
   gulp.parallel(clean),
-  gulp.parallel(bundler, fonts, images, markup, sass, sprite)
+  gulp.parallel(bundler, fonts, images, markup, sass, sprite, server)
 ))
