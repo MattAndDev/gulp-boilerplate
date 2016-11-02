@@ -5,8 +5,6 @@
 
   <h1>Home</h1>
   <p>Hello world! This is a test paragraph</p>
-  <svg class="i-facebook">
-   <use xlink:href="images/sprite.svg#i-facebook"></use>
-  </svg>
+  {% include '../components/icon.twig' with {icon: 'facebook'}%}
 </body>
 </html>
