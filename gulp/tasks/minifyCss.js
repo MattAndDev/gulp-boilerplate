@@ -10,9 +10,9 @@ import size from 'gulp-filesize'
 // ============================================
 
 function minifyCss () {
-  return gulp.src(config.cssSrc)
+  return gulp.src(config.production.cssSrc)
     .pipe(minifyCSS())
-    .pipe(gulp.dest(config.cssDest))
+    .pipe(gulp.dest(config.production.cssDest))
     .pipe(size())
 }
 

@@ -1,7 +1,7 @@
 import gulp from 'gulp'
 import config from '../config'
 import size from 'gulp-filesize'
-import uglifyJS from 'gulp-uglify'
+import uglify from 'gulp-uglify'
 
 // ============================================
 // Uglify task
@@ -9,14 +9,14 @@ import uglifyJS from 'gulp-uglify'
 //  Comrpesses and uglifies js
 // ============================================
 
-function uglify () {
+function minifyJs () {
   return gulp.src(config.production.jsSrc)
     .pipe(uglify())
     .pipe(gulp.dest(config.production.jsDest))
     .pipe(size())
 }
 
-uglify.displayName = 'uglify'
-uglify.description = 'Uglifies and compresses JavaScript files'
+minifyJs.displayName = 'minifyJs'
+minifyJs.description = 'Uglifies and compresses JavaScript files'
 
-export default uglify
+export default minifyJs

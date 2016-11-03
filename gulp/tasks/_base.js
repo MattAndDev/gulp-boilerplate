@@ -12,5 +12,5 @@ import server from './server'
 
 gulp.task('base', gulp.series(
   gulp.parallel(clean),
-  gulp.parallel(bundler, fonts, images, twig, sass, sprite, server)
+  gulp.parallel(bundler, fonts, images, twig, sass, sprite)
 ))
