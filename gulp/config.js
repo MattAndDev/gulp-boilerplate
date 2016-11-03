@@ -1,7 +1,7 @@
 var dest = './dist'
 var src = './src'
 
-module.exports = {
+export default {
 
 
   destFolder: dest,
