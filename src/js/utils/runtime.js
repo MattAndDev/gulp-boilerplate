@@ -5,25 +5,17 @@
 // =======================================================================
 
 
-// Importing libs
-// =======================================================================
-
-import raf from 'raf'
-
-
 // Animator class
 // =======================================================================
 
-class Animator {
+class runtime {
 
-  constructor() {
-
-    // Initialises the aniamtor runtime, powered by requestAniamtionFrame
-    this.runtime()
+  start () {
+    this.renderer()
   }
 
-  runtime = () => {
-    raf(this.runtime)
+  renderer = () => {
+    window.requestAnimationFrame(this.renderer)
   }
 
 }
