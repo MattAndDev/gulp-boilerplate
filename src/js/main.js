@@ -1,21 +1,16 @@
-import Animator from './classes/Animator'
-import Settings from './classes/Settings'
-import featurejs from 'featurejs'
+import runtime from './utils/runtime'
+import settings from './utils/settings'
 
 var domReady = function (callback) {
   document.readyState === 'interactive' || document.readyState === 'complete' ? callback() : document.addEventListener('DOMContentLoaded', callback)
 }
 
-
 domReady(() => {
 
-  // Add the Settings class
-  let settings = new Settings()
+  settings.on('resize', () => {})
 
-  // Add the Animator class
-  let animator = new Animator()
+  settings.on('scroll', () => {})
 
-  // =======================================================
-  // Code some awesome things
+  settings.on('mousemove', () => {})
 
 })
