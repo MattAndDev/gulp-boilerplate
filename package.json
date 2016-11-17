@@ -1,7 +1,7 @@
 {
-  "name": "gulp-boilerplate",
+  "name": "gulp boilerplate",
   "version": "0.0.1",
-  "description": "A gulp started kit",
+  "description": "A barebone starter kit for frontend development.",
   "repository": {
     "type": "git",
     "url": "https://github.com/MattAndDev/gulp-boilerplate.git"
@@ -11,16 +11,11 @@
     "npm": "3.10.8"
   },
   "browser": {
-    "featurejs": "./src/js/libs/feature.js"
   },
   "browserify-shim": {
-    "featurejs": {
-      "exports": "featurejs"
-    }
   },
   "browserify": {
     "transform": [
-      "browserify-shim",
       "babelify"
     ]
   },
@@ -56,15 +51,13 @@
     "gulp-svg-sprite": "^1.3.6",
     "gulp-svgmin": "^1.2.3",
     "gulp-tap": "^0.1.3",
+    "gulp-twig": "^0.6.0",
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
+    "require-dir": "^0.3.1",
     "sass-lint": "^1.9.1"
   },
   "dependencies": {
-    "eventemitter3": "^2.0.2",
-    "gulp-twig": "^0.6.0",
-    "raf": "^3.2.0",
-    "require-dir": "^0.3.1",
-    "svg4everybody": "^2.0.0"
+    "eventemitter3": "^2.0.2"
   }
 }
