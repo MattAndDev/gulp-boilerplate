@@ -15,6 +15,7 @@ import minifyHTML from 'gulp-minify-html'
 function twig () {
   return gulp.src(config.twig.src)
     .pipe(twigCompiler())
+    .on('error', handleErrors)
     .pipe(minifyHTML({spare: true}))
     .pipe(gulp.dest(config.twig.dest))
     .pipe(browserSync.reload({stream: true}))
