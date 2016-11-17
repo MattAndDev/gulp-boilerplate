@@ -27,7 +27,7 @@ gulp.task('watch',
 
   // JavaScript watcher
   gulp.watch(
-    config.browserify.src,
+    config.browserify.srcAll,
     gulp.parallel(bundler)
   ),
 

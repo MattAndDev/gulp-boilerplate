@@ -15,6 +15,7 @@ export default {
 
   browserify: {
     src: src + '/js/*.js',
+    srcAll: src + '/js/**/*.js',
     dest: dest + '/js/',
     config: {
 
