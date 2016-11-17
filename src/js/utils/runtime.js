@@ -1,14 +1,10 @@
 // =======================================================================
 // Animator.js
 // =======================================================================
-// Used to aniamte all UX via raf
+// Basic request animation frame manager for animations
 // =======================================================================
 
-
-// Animator class
-// =======================================================================
-
-class runtime {
+class Runtime {
 
   start () {
     this.renderer()
@@ -20,4 +16,4 @@ class runtime {
 
 }
 
-export default Animator
+export default new Runtime()

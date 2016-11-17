@@ -1,19 +1,14 @@
 // =======================================================================
-// Settings.js
+// settings.js
 // =======================================================================
-// Used to store global client data
+// Basic class to store global data and manage dom wide events
 // =======================================================================
 
 
 // Importing libs
-// =======================================================================
-
 import EventEmitter from 'eventemitter3'
 
-
-
 // Settings class
-// =======================================================================
 
 class Settings extends EventEmitter {
 
@@ -114,6 +109,7 @@ class Settings extends EventEmitter {
       this.resize.timeout = setTimeout(() => {
         this.window.x = window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth
         this.window.y = window.innerHeight || document.documentElement.clientHeight || document.getElementsByTagName('body')[0].clientHeight
+        // emit the resize event
         this.emit('resize')
       }, this.resize.delay)
     })
@@ -122,7 +118,8 @@ class Settings extends EventEmitter {
     window.addEventListener('mousemove', (e) => {
       this.mouse.x = e.clientX
       this.mouse.y = e.clientY
-      this.emit('mousemove')
+      // emit the mousemove event
+      this.emit('mousemove', e)
     })
   }
 
