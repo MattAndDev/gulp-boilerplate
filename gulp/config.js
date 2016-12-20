@@ -101,7 +101,7 @@ export default {
     src: src + '/sass/**/*.{sass,scss}',
     dest: dest + '/css',
 
-    // gulp-autoprefixer settings
+    // postcss-autoprefixer settings
 
     prefix: [
       'ie >= 9',
@@ -116,10 +116,13 @@ export default {
     ],
 
     // gulp-sass settings
-
     settings: {
       indentedSyntax: true, // Enable .sass syntax!
-      imagePath: 'images' // Used by the image-url helper
+      imagePath: 'images', // Used by the image-url helper,
+      // add external dependencies
+      includePaths: [
+        './node_modules/normalize.css'
+      ]
     }
   },
 
