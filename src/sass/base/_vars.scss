@@ -14,7 +14,7 @@ $gray-light:  #F7F7F7;
 $gray-dark:   #767676;
 
 $color-text:  $black;
-$color-bg:    white;
+$color-bg:    #FFFFFF;
 
 
 // Dimensions
@@ -32,8 +32,8 @@ $space-triple:    $space * 3;
 
 $font:      "Helvetica Neue", Arial, sans-serif;
 $font-mono: monospace, monospace;
-$fs:        16px;
-$lh:        ($space / $fs);
+$font-size:        16px;
+$line-height:        ($space / $font-size);
 
 $fs-h1: 48px;
 $fs-h2: 36px;

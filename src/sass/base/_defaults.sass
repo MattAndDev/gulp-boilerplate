@@ -9,7 +9,7 @@
 *
   box-sizing: border-box
 
-:before, :after
+::before, ::after
   box-sizing: inherit
 
 
@@ -24,23 +24,28 @@
 //============================================
 
 html
-  -webkit-tap-highlight-color: rgba(0,0,0,0)
-  font-size: 100%
+  font-size: $font-size
+  -webkit-tap-highlight-color: rgba($black, 0) // 1.
 
 
 // Body
 //============================================
 
+// 1. Separate properties rather than using the shorthand
+//    as IE 10 seems to have trouble interpreting it correctly.
+
 body
-  font: #{$fs}/#{$lh} $font
   background: $color-bg
   color: $color-text
+  font-family: $font
+  font-size: $font-size
+  line-height: $line-height
 
 
 // Vertical rhythm
 //============================================
 
-p, table, blockquote, address, pre, iframe, form
+p, table, blockquote, address, pre, iframe, form, figure
   margin: 0 0 $space
 
 
@@ -48,26 +53,19 @@ p, table, blockquote, address, pre, iframe, form
 //============================================
 
 a
-  text-decoration: none
   color: inherit
-
-  &:hover
-    text-decoration: none
+  text-decoration: none
 
 
 // Lists (enumeration)
 //============================================
 
+// Lists are reset by default as they are often
+// used as structural elements.
+
 ul, ol
-  margin-top: 0
-  margin-bottom: $space
-
-  ul, ol
-    margin-bottom: 0
-
-// helper class
-.list-reset, .list-unstyled
-  padding-left: 0
+  margin: 0
+  padding: 0
   list-style: none
 
 
@@ -89,8 +87,8 @@ dd
 //============================================
 
 img
-  -ms-interpolation-mode: bicubic
   vertical-align: bottom
+  -ms-interpolation-mode: bicubic
 
 embed, object, iframe
   border: 0
@@ -100,12 +98,16 @@ embed, object, iframe
 // Tables
 //============================================
 
+table
+  border-collapse: collapse
+  border-spacing: 0
+
 td, th
   vertical-align: top
 
 th
-  text-align: left
   font-weight: bold
+  text-align: left
 
 
 // Address
@@ -120,12 +122,12 @@ address
 
 hr
   display: block
-  height: 1px
-  border: 0
-  border-top: 1px solid rgba($gray-light, .5)
+  height: 0.1rem
   margin: $space 0
   padding: 0
   clear: both
+  border: 0
+  border-top: 0.1rem solid rgba($color-text, 0.5)
 
 
 // Code
@@ -135,20 +137,61 @@ pre, code
   font-family: $font-mono
 
 pre
-  background-color: $gray-light
-  overflow: auto
   padding: $space-half
+  background-color: rgba($black, 0.3)
   line-height: inherit
-  white-space: pre
   text-align: left
+  white-space: pre
+  overflow: auto
 
 
 // Quotes
 //============================================
 
 blockquote
-  padding-left: 15px
-  border-left: 2px solid $gray-light
+  padding-left: 1.5rem
+  border-left: 0.2rem solid rgba($black, 0.3)
 
 q
   quotes: "\201C" "\201D" "\2018" "\2019"
+
+cite
+  font-style: normal
+
+
+// Forms
+//============================================
+
+input,
+optgroup,
+select,
+textarea
+  vertical-align: middle
+
+fieldset
+  min-width: 0
+  margin: 0
+  padding: 0
+  border: 0
+
+label
+  display: inline-block
+
+  &[for]
+    cursor: pointer
+
+
+// Buttons
+//============================================
+
+// Reset completely to facilitate styling.
+
+button
+  padding: 0
+  border: 0
+  outline: 0
+  background-color: transparent
+  color: inherit
+  line-height: inherit
+  cursor: pointer
+  vertical-align: baseline
