@@ -148,7 +148,7 @@ export default {
           render: {
             scss: {
               template: 'gulp/tpl/_sprite-inline.scss',
-              dest: '../../src/sass/_sprite.scss'
+              dest: '../../src/sass/base/sprite.scss'
             }
           }
         }
