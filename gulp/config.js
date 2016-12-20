@@ -98,7 +98,8 @@ export default {
   // ==============================
 
   sass: {
-    src: src + '/sass/**/*.{sass,scss}',
+    src: src + '/sass/*.{sass,scss}',
+    srcAll: src + '/sass/**/*.{sass,scss}',
     dest: dest + '/css',
 
     // postcss-autoprefixer settings
