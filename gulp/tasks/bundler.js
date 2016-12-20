@@ -11,7 +11,7 @@ import handleErrors from '../util/handleErrors'
 // Browserify task
 // ============================================
 //  Bundles all entry files found at config path
-//  to a separate destinatio nfile with original naming
+//  to a separate destination file with original naming
 // ============================================
 
 function bundler () {

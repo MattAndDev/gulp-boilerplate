@@ -14,12 +14,18 @@ export default {
 
 
   browserify: {
+
+    // watcher config
     src: src + '/js/*.js',
     srcAll: src + '/js/**/*.js',
     dest: dest + '/js/',
+
+    // browserify config
     config: {
       debug: true
     },
+
+    // babel config
     babel: {
       presets: ['es2015'],
       plugins: ['transform-class-properties']
@@ -63,7 +69,6 @@ export default {
     dest: dest + '/images',
 
     // gulp-imagemin settings
-
     options: {
     }
   },
