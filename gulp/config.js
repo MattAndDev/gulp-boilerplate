@@ -18,7 +18,7 @@ export default {
     srcAll: src + '/js/**/*.js',
     dest: dest + '/js/',
     config: {
-
+      debug: true
     },
     babel: {
       presets: ['es2015'],

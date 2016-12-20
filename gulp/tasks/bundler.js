@@ -3,7 +3,6 @@ import browserify from 'browserify'
 import gutil from 'gulp-util'
 import tap from 'gulp-tap'
 import buffer from 'gulp-buffer'
-import sourcemaps from 'gulp-sourcemaps'
 import config from '../config'
 import babel from 'babelify'
 import handleErrors from '../util/handleErrors'
@@ -32,15 +31,6 @@ function bundler () {
           .on('error', handleErrors)
 
       }))
-
-      // transform streaming contents into buffer contents (because gulp-sourcemaps does not support streaming contents)
-      .pipe(buffer())
-
-      // load and init sourcemaps
-      .pipe(sourcemaps.init({loadMaps: true}))
-
-      // write sourcemaps
-      .pipe(sourcemaps.write())
 
       .pipe(gulp.dest(config.browserify.dest))
 
