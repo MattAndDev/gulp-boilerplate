@@ -16,13 +16,16 @@ export default {
   browserify: {
 
     // watcher config
-    src: src + '/js/*.js',
+    src: src + '/js/main.js',
     srcAll: src + '/js/**/*.js',
     dest: dest + '/js/',
 
     // browserify config
     config: {
-      debug: true
+      debug: true,
+      entries: [
+        src + '/js/main.js'
+      ],
     },
 
     // babel config
