@@ -21,12 +21,25 @@ export default {
     dest: dest + '/js/',
 
     // browserify config
-    config: {
-      debug: true,
-      entries: [
-        src + '/js/main.js'
-      ],
-    },
+    configs: [
+      {
+        debug: true,
+        entries: [
+          src + '/js/main.js'
+        ],
+        dest: dest + '/js/',
+        filename: 'main.js'
+      },
+      {
+        debug: true,
+        entries: [
+          src + '/js/main-2.js'
+        ],
+        dest: dest + '/js/',
+        filename: 'main-2.js'
+      }
+    ],
+
 
     // babel config
     babel: {
