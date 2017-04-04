@@ -1,7 +1,10 @@
 import browserSync from 'browser-sync'
 import gulp from 'gulp'
 import config from '../config'
-
+import webpack from 'webpack'
+import getWebpackConfig from '../util/getWebpackConfig'
+import webpackDevMiddleware from 'webpack-dev-middleware'
+import webpackHotMiddleware from 'webpack-hot-middleware'
 // ============================================
 // Server task
 // ============================================
@@ -9,6 +12,18 @@ import config from '../config'
 // ============================================
 
 function server () {
+  const wpConfig = getWebpackConfig('watch')
+  console.log(wpConfig)
+  const bundler = webpack(wpConfig)
+  config.browserSync.middleware = [
+    webpackDevMiddleware(bundler, {
+      publicPath: wpConfig.output.publicPath,
+      stats: 'minimal',
+      hot: true
+    }),
+    webpackHotMiddleware(bundler)
+  ]
+
   browserSync(config.browserSync)
 }
 
