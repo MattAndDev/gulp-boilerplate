@@ -7,7 +7,7 @@ A gulp builder for static web development
 
 Templating with **twig**.<br>
 Styles with **sass** & **post-css**.<br>
-Javascript with **babel** & **browserify**.<br>
+Javascript with **babel** & **webpack**.<br>
 Image minification with **imagemin**.<br>
 Svg inline sprite with **svg-sprite**.<br>
 Dev environment with **browser sync**.<br>
