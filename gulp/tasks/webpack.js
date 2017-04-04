@@ -12,10 +12,10 @@ import logger from '../util/bundleLogger'
 
 
 function webpack (done) {
-  const config = getWebpackConfig(global.env)
+  const config = getWebpackConfig('watch')
   webPack(config, (err, stats) => {
     logger(err, stats)
-    cb()
+    done()
   })
 }
 
@@ -24,4 +24,4 @@ webpack.displayName = 'webpack'
 webpack.description = 'the webpack magic'
 
 // Export
-export default twig
+export default webpack
