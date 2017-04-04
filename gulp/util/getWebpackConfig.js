@@ -31,12 +31,12 @@ module.exports = (env) => {
     config.webpack.plugins.push(
       new webpack.DefinePlugin({
         'process.env': {
-          NODE_ENV: JSON.stringify('production'),
-        },
+          NODE_ENV: JSON.stringify('production')
+        }
       }),
       new webpack.optimize.UglifyJsPlugin()
     )
   }
-  console.log(config.webpack)
+
   return config.webpack
 }

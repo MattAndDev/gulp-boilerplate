@@ -1,6 +1,5 @@
 import gulp from 'gulp'
 import clean from './clean'
-import bundler from './bundler'
 import fonts from './fonts'
 import images from './images'
 import sass from './sass'

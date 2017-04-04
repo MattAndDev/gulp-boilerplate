@@ -13,7 +13,6 @@ import webpackHotMiddleware from 'webpack-hot-middleware'
 
 function server () {
   const wpConfig = getWebpackConfig('watch')
-  console.log(wpConfig)
   const bundler = webpack(wpConfig)
   config.browserSync.middleware = [
     webpackDevMiddleware(bundler, {
