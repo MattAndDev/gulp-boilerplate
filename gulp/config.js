@@ -1,5 +1,7 @@
-var dest = './dist'
-var src = './src'
+import path from 'path'
+
+const dest = path.resolve('./dist')
+const src = path.resolve('./src')
 
 export default {
 
@@ -183,7 +185,37 @@ export default {
         { removeAttrs: { attrs: '(fill|stroke|style)' } }
       ]
     }
-  }
+  },
 
+  webpack: {
+    context: `${src}/js`,
+    entry: {
+      // Path relative to `context`
+      main: ['./main.js']
+    },
+    output: {
+      filename: '[name].js',
+      path: `${dest}/js`,
+      // Path on server
+      publicPath: '/js'
+    },
+    module: {
+      rules: [
+        {
+          test: /\.js$/,
+          exclude: /(node_modules|bower_components)/,
+          use: [
+            {
+              loader: 'babel-loader',
+              options: {
+                presets: ['es2015'],
+                plugins: ['transform-class-properties']
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
 
 }
