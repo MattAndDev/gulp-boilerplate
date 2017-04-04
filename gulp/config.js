@@ -29,15 +29,15 @@ export default {
         ],
         dest: dest + '/js/',
         filename: 'main.js'
-      },
-      {
-        debug: true,
-        entries: [
-          src + '/js/main-2.js'
-        ],
-        dest: dest + '/js/',
-        filename: 'main-2.js'
       }
+      // {
+      //   debug: true,
+      //   entries: [
+      //     src + '/js/main-2.js'
+      //   ],
+      //   dest: dest + '/js/',
+      //   filename: 'main-2.js'
+      // }
     ],
 
 
