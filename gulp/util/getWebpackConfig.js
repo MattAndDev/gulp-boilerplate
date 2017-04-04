@@ -4,8 +4,6 @@ import config from '../config.js'
 import webpack from 'webpack'
 
 module.exports = (env) => {
-  console.log(env)
-  console.log(config.webpack)
   if (!config.webpack.plugins) {
     config.webpack.plugins = []
   }
