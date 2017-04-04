@@ -12,7 +12,7 @@ import logger from '../util/bundleLogger'
 
 
 function webpack (done) {
-  const config = getWebpackConfig('watch')
+  const config = getWebpackConfig('prod')
   webPack(config, (err, stats) => {
     logger(err, stats)
     done()

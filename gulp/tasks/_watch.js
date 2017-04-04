@@ -25,12 +25,6 @@ gulp.task('watch',
     gulp.parallel(sprite)
   ),
 
-  // JavaScript watcher
-  gulp.watch(
-    config.browserify.srcAll,
-    gulp.parallel(bundler)
-  ),
-
   // Sass watcher
   gulp.watch(
     config.sass.srcAll,
