@@ -9,48 +9,6 @@ export default {
   destFolder: dest,
 
 
-
-  // ==============================
-  // browserify.js settings
-  // ==============================
-
-
-  browserify: {
-
-    // watcher config
-    src: src + '/js/main.js',
-    srcAll: src + '/js/**/*.js',
-    dest: dest + '/js/',
-
-    // browserify config
-    configs: [
-      {
-        debug: true,
-        entries: [
-          src + '/js/main.js'
-        ],
-        dest: dest + '/js/',
-        filename: 'main.js'
-      }
-      // {
-      //   debug: true,
-      //   entries: [
-      //     src + '/js/main-2.js'
-      //   ],
-      //   dest: dest + '/js/',
-      //   filename: 'main-2.js'
-      // }
-    ],
-
-
-    // babel config
-    babel: {
-      presets: ['es2015'],
-      plugins: ['transform-class-properties']
-    }
-  },
-
-
   // ==============================
   // browserSync.js settings
   // ==============================
@@ -70,6 +28,10 @@ export default {
     ]
   },
 
+
+  // ==============================
+  // fonts.js settings
+  // ==============================
 
   fonts: {
     src: src + '/fonts/**',
