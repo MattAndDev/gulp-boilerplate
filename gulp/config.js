@@ -153,7 +153,7 @@ export default {
     context: `${src}/js`,
     entry: {
       // Path relative to `context`
-      main: ['./main.js']
+      main: ['./app.js']
     },
     output: {
       filename: '[name].js',
@@ -175,8 +175,22 @@ export default {
               }
             }
           ]
+        },
+        {
+          test: /\.vue$/,
+          loader: 'vue-loader'
         }
       ]
+    },
+    resolve: {
+      alias: {
+        vue: 'vue/dist/vue.common.js',
+        utils: `${src}/js/utils`,
+        components: `${src}/js/components`,
+        views: `${src}/js/views`,
+        settings: `${src}/js/utils/settings`,
+        store: `${src}/js/store`
+      }
     }
   }
 
