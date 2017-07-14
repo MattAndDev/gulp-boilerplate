@@ -41,7 +41,7 @@ class Settings extends EventEmitter {
     }
 
     // Is touch flag
-    this.isTouch = !!(('ontouchstart' in window) || window.navigator && window.navigator.msPointerEnabled && window.MSGesture || window.DocumentTouch && document instanceof DocumentTouch)
+    this.isTouch = !!(('ontouchstart' in window) || (window.navigator && window.navigator.msPointerEnabled && window.MSGesture) || (window.DocumentTouch && document instanceof DocumentTouch))
 
     // Mouse position
     this.mouse = {
