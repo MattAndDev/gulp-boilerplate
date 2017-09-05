@@ -1,6 +1,13 @@
+# OSX
 .DS_Store
-Desktop.ini
+
+# Dep
 node_modules
-npm-debug.log
+# note: this should be actually commited against the project repo
+*yarn.lock
+
+# distribution folder
 dist/
+
+# generated scss file
 src/sass/base/sprite.scss
